@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { FAQ_ITEMS } from '../../constants/faq';
@@ -19,16 +20,14 @@ export const FAQ: React.FC = () => {
           title="Esclareça suas dúvidas sobre crédito"
           description="Acreditamos que informação clara é a base de uma decisão segura. Confira as respostas para as perguntas mais comuns."
         />
-
         <div className="space-y-4 mt-8">
           {FAQ_ITEMS.map((item) => {
             const isOpen = openId === item.id;
             return (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className="bg-white border border-neutral-border rounded-premium-sm shadow-sm overflow-hidden transition-all duration-300 hover:border-primary-700/50"
               >
-                {/* Accordion Header */}
                 <h3 className="m-0">
                   <button
                     onClick={() => toggleFAQ(item.id)}
@@ -39,15 +38,12 @@ export const FAQ: React.FC = () => {
                     type="button"
                   >
                     <span>{item.question}</span>
-                    <ChevronDown 
-                      className={`w-5 h-5 text-primary-700 shrink-0 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`} 
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      className={`text-primary-700 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
                 </h3>
-
-                {/* Accordion Panel */}
                 <div
                   id={`faq-panel-${item.id}`}
                   role="region"

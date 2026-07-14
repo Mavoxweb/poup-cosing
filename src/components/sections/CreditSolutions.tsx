@@ -1,7 +1,9 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { X, MapPin } from 'lucide-react';
+import { useRef, useEffect, useCallback } from 'react';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import SolutionCard from '../ui/SolutionCard';
@@ -32,59 +34,36 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
     reset
   } = useForm<CityFormInput>({
     resolver: zodResolver(cityLeadSchema),
-    defaultValues: {
-      city: ""
-    }
+    defaultValues: { city: '' }
   });
 
   const handleCloseModal = useCallback(() => {
     setIsCityModalOpen(false);
     reset();
-    // Return focus to the trigger element for screen readers
     setTimeout(() => {
-      if (cityModalTriggerRef.current) {
-        cityModalTriggerRef.current.focus();
-      }
+      if (cityModalTriggerRef.current) cityModalTriggerRef.current.focus();
     }, 50);
   }, [setIsCityModalOpen, reset, cityModalTriggerRef]);
 
-  // Handle opening/closing modal accessibility
   useEffect(() => {
     if (isCityModalOpen) {
-      // Focus on the input once modal opens
-      setTimeout(() => {
-        if (inputRef.current) {
-          inputRef.current.focus();
-        }
-      }, 50);
+      setTimeout(() => { if (inputRef.current) inputRef.current.focus(); }, 50);
 
       const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-          handleCloseModal();
-        }
-        
-        // Focus Trap
+        if (e.key === 'Escape') { handleCloseModal(); }
         if (e.key === 'Tab' && modalRef.current) {
-          const focusableElements = modalRef.current.querySelectorAll(
+          const focusable = modalRef.current.querySelectorAll<HTMLElement>(
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
           );
-          const firstElement = focusableElements[0] as HTMLElement;
-          const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
-
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
           if (e.shiftKey) {
-            if (document.activeElement === firstElement) {
-              lastElement.focus();
-              e.preventDefault();
-            }
+            if (document.activeElement === first) { last.focus(); e.preventDefault(); }
           } else {
-            if (document.activeElement === lastElement) {
-              firstElement.focus();
-              e.preventDefault();
-            }
+            if (document.activeElement === last) { first.focus(); e.preventDefault(); }
           }
         }
       };
-
       window.addEventListener('keydown', handleKeyDown);
       return () => window.removeEventListener('keydown', handleKeyDown);
     }
@@ -100,7 +79,7 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
     handleCloseModal();
   };
 
-  const { ref: registeredInputRef, ...restRegister } = register("city");
+  const { ref: registeredInputRef, ...restRegister } = register('city');
 
   return (
     <section id="solucoes" className="py-20 bg-white">
@@ -110,14 +89,12 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
           title="Uma necessidade diferente pode pedir uma solução diferente."
           description="Conheça as modalidades atendidas pela Poupe Consig e fale com uma consultora para verificar as possibilidades aplicáveis ao seu perfil."
         />
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
           {SOLUTIONS.map((solution) => (
             <SolutionCard
               key={solution.id}
               solution={solution}
               onAction={(sol) => {
-                // Find active element to pass for focus restoration
                 const activeEl = document.activeElement as HTMLButtonElement;
                 if (sol.type === 'CONTA_LUZ') {
                   handleOpenModal(activeEl);
@@ -130,9 +107,9 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
         </div>
       </Container>
 
-      {/* Accessible City Input Modal for Electric Bill Solution */}
+      {/* City Modal */}
       {isCityModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary-950/40 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]"
           role="dialog"
           aria-modal="true"
@@ -146,12 +123,12 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
               aria-label="Fechar janela"
               type="button"
             >
-              <X className="w-5 h-5" />
+              <FontAwesomeIcon icon={faXmark} className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-accent-100 rounded-lg text-accent-700">
-                <MapPin className="w-6 h-6" />
+                <FontAwesomeIcon icon={faLocationDot} className="w-6 h-6" />
               </div>
               <h3 id="modal-title" className="text-xl font-extrabold text-primary-950">
                 Verificar disponibilidade
@@ -164,10 +141,7 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="space-y-2">
-                <label 
-                  htmlFor="city-input" 
-                  className="block text-sm font-bold text-primary-950"
-                >
+                <label htmlFor="city-input" className="block text-sm font-bold text-primary-950">
                   Em qual cidade você mora?
                 </label>
                 <input
@@ -178,12 +152,9 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
                     errors.city ? 'border-red-500 focus-visible:ring-red-500' : 'border-neutral-border'
                   }`}
                   {...restRegister}
-                  ref={(e) => {
-                    registeredInputRef(e);
-                    inputRef.current = e;
-                  }}
+                  ref={(e) => { registeredInputRef(e); inputRef.current = e; }}
                   aria-invalid={!!errors.city}
-                  aria-describedby={errors.city ? "city-error" : undefined}
+                  aria-describedby={errors.city ? 'city-error' : undefined}
                 />
                 {errors.city && (
                   <span id="city-error" className="text-xs font-bold text-red-600 block mt-1">
@@ -191,23 +162,11 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
                   </span>
                 )}
               </div>
-
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Button
-                  variant="secondary"
-                  onClick={handleCloseModal}
-                  type="button"
-                  fullWidth
-                  className="sm:w-1/3 order-2 sm:order-1"
-                >
+                <Button variant="secondary" onClick={handleCloseModal} type="button" fullWidth className="sm:w-1/3 order-2 sm:order-1">
                   Cancelar
                 </Button>
-                <Button
-                  variant="accent"
-                  type="submit"
-                  fullWidth
-                  className="sm:w-2/3 order-1 sm:order-2"
-                >
+                <Button variant="accent" type="submit" fullWidth className="sm:w-2/3 order-1 sm:order-2">
                   Confirmar e chamar
                 </Button>
               </div>

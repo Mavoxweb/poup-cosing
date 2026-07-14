@@ -1,119 +1,179 @@
 import React from 'react';
 import Container from '../ui/Container';
 
+interface BankLogo {
+  name: string;
+  label: string;
+  hoverColor: string;
+  svg: React.ReactNode;
+}
+
 export const Institutions: React.FC = () => {
+  const banks: BankLogo[] = [
+    {
+      name: 'Banco Inter',
+      label: 'Logotipo do Banco Inter, instituição parceira da Poupe Consig',
+      hoverColor: 'hover:border-[#FF7A00]/40',
+      svg: (
+        /* Banco Inter — wordmark laranja */
+        <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto">
+          {/* "i" dot */}
+          <circle cx="8" cy="6" r="4.5" className="fill-current" />
+          {/* "i" stem */}
+          <rect x="5.5" y="13" width="5" height="18" rx="2.5" className="fill-current" />
+          {/* "nter" wordmark */}
+          <text
+            x="20" y="30"
+            fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
+            fontWeight="800"
+            fontSize="22"
+            className="fill-current"
+            letterSpacing="-0.5"
+          >
+            nter
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Banco Daycoval',
+      label: 'Logotipo do Banco Daycoval, instituição parceira da Poupe Consig',
+      hoverColor: 'hover:border-[#003B71]/40',
+      svg: (
+        /* Banco Daycoval — símbolo + wordmark */
+        <svg viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto">
+          {/* D estilizado */}
+          <path
+            d="M4 4H14C20.627 4 26 9.373 26 16V20C26 26.627 20.627 32 14 32H4V4Z"
+            className="fill-current"
+          />
+          <path
+            d="M9 10H14C17.314 10 20 12.686 20 16V20C20 23.314 17.314 26 14 26H9V10Z"
+            fill="white"
+          />
+          <text
+            x="32" y="26"
+            fontFamily="'Helvetica Neue', Arial, sans-serif"
+            fontWeight="700"
+            fontSize="14"
+            className="fill-current"
+            letterSpacing="0.3"
+          >
+            DAYCOVAL
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Banco Safra',
+      label: 'Logotipo do Banco Safra, instituição parceira da Poupe Consig',
+      hoverColor: 'hover:border-[#1E3050]/40',
+      svg: (
+        /* Banco Safra — logotipo clássico azul-marinho */
+        <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto">
+          {/* Escudo simplificado */}
+          <path
+            d="M8 4L22 4L22 20C22 26.627 15 32 15 32C15 32 8 26.627 8 20L8 4Z"
+            className="fill-current"
+          />
+          <path d="M12 10H18M12 15H18M12 20H16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+          <text
+            x="28" y="28"
+            fontFamily="'Georgia', 'Times New Roman', serif"
+            fontWeight="700"
+            fontSize="20"
+            className="fill-current"
+            letterSpacing="-0.3"
+          >
+            Safra
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Caixa Econômica Federal',
+      label: 'Logotipo da Caixa Econômica Federal, instituição parceira da Poupe Consig',
+      hoverColor: 'hover:border-[#005CA5]/40',
+      svg: (
+        /* CAIXA — bloco azul com laranja */
+        <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto">
+          {/* Quadrado laranja marca registrada */}
+          <rect x="0" y="2" width="16" height="16" rx="1" fill="#FF850A" />
+          <rect x="0" y="20" width="16" height="14" rx="1" className="fill-current" />
+          {/* Texto CAIXA em negrito */}
+          <text
+            x="22" y="26"
+            fontFamily="'Helvetica Neue', Arial, sans-serif"
+            fontWeight="900"
+            fontSize="21"
+            className="fill-current"
+            letterSpacing="0.5"
+          >
+            CAIXA
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: 'Facta Financeira',
+      label: 'Logotipo da Facta Financeira, instituição parceira da Poupe Consig',
+      hoverColor: 'hover:border-[#B20E10]/40',
+      svg: (
+        /* Facta — símbolo triangular + wordmark */
+        <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-auto">
+          {/* Triângulo ascendente */}
+          <path d="M12 30L3 16L12 4L21 16L12 30Z" className="fill-current" opacity="0.9" />
+          <path d="M12 24L7 16L12 8L17 16L12 24Z" fill="white" opacity="0.7" />
+          <text
+            x="28" y="27"
+            fontFamily="'Helvetica Neue', Arial, sans-serif"
+            fontWeight="800"
+            fontSize="19"
+            className="fill-current"
+            letterSpacing="0.2"
+          >
+            Facta
+          </text>
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <section className="py-16 bg-surface border-y border-neutral-border">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <span className="text-xs md:text-sm font-bold tracking-widest text-accent-700 uppercase mb-3 block">
-            INSTITUIÇÕES
+            INSTITUIÇÕES PARCEIRAS
           </span>
           <h2 className="text-2xl md:text-3xl font-extrabold text-primary-950 tracking-tight leading-tight">
             Instituições com as quais trabalhamos
           </h2>
           <p className="mt-3 text-sm md:text-base text-neutral-secondary leading-relaxed max-w-2xl mx-auto">
-            A disponibilidade de produtos, condições e taxas pode variar conforme o perfil do cliente, convênios ativos e a análise de crédito realizada pela instituição financeira parceira responsável pela operação.
+            A disponibilidade de produtos, condições e taxas pode variar conforme o perfil do cliente,
+            convênios ativos e a análise de crédito realizada pela instituição financeira responsável pela operação.
           </p>
         </div>
 
-        {/* Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 pt-4 items-center justify-items-center">
-          
-          {/* Banco Inter */}
-          <div 
-            className="flex flex-col items-center justify-center h-20 w-full max-w-[180px] bg-white border border-neutral-border rounded-premium-sm p-4 shadow-sm hover:border-[#FF7A00]/40 group transition-all duration-300"
-            role="img"
-            aria-label="Logotipo do Banco Inter, instituição parceira da Poupe Consig"
-          >
-            <svg 
-              viewBox="0 0 120 40" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-7 w-auto text-[#7e8590] group-hover:text-[#FF7A00] transition-colors duration-300"
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 pt-4 items-center justify-items-center">
+          {banks.map((bank) => (
+            <div
+              key={bank.name}
+              className={`
+                flex items-center justify-center h-20 w-full max-w-[180px]
+                bg-white border border-neutral-border rounded-premium-sm p-5 shadow-sm
+                ${bank.hoverColor}
+                text-[#9ca3af] hover:text-[#374151]
+                transition-all duration-300 group cursor-default
+              `}
+              role="img"
+              aria-label={bank.label}
             >
-              <rect x="2" y="5" width="20" height="30" rx="4" fill="currentColor" opacity="0.15" />
-              <path d="M12 12V28M8 16H16" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-              {/* Simplified Inter Text representation */}
-              <text x="32" y="26" fontFamily="Inter, sans-serif" fontWeight="900" fontSize="20" fill="currentColor">inter</text>
-            </svg>
-          </div>
-
-          {/* Banco Daycoval */}
-          <div 
-            className="flex flex-col items-center justify-center h-20 w-full max-w-[180px] bg-white border border-neutral-border rounded-premium-sm p-4 shadow-sm hover:border-[#003B71]/40 group transition-all duration-300"
-            role="img"
-            aria-label="Logotipo do Banco Daycoval, instituição parceira da Poupe Consig"
-          >
-            <svg 
-              viewBox="0 0 120 40" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-auto text-[#7e8590] group-hover:text-[#003B71] transition-colors duration-300"
-            >
-              {/* Daycoval stylized double circle logo */}
-              <circle cx="16" cy="20" r="10" stroke="currentColor" strokeWidth="3.5" />
-              <path d="M16 10C21.5 10 26 14.5 26 20C26 25.5 21.5 30 16 30" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
-              <text x="36" y="26" fontFamily="sans-serif" fontWeight="800" fontSize="13" letterSpacing="0.5" fill="currentColor">DAYCOVAL</text>
-            </svg>
-          </div>
-
-          {/* Banco Safra */}
-          <div 
-            className="flex flex-col items-center justify-center h-20 w-full max-w-[180px] bg-white border border-neutral-border rounded-premium-sm p-4 shadow-sm hover:border-[#1E3050]/40 group transition-all duration-300"
-            role="img"
-            aria-label="Logotipo do Banco Safra, instituição parceira da Poupe Consig"
-          >
-            <svg 
-              viewBox="0 0 120 40" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-auto text-[#7e8590] group-hover:text-[#1E3050] transition-colors duration-300"
-            >
-              {/* Safra Shield representing bank history */}
-              <path d="M10 12H22V28H10V12Z" stroke="currentColor" strokeWidth="2.5" />
-              <path d="M10 17H22M16 12V28" stroke="currentColor" strokeWidth="1.5" />
-              <text x="32" y="26" fontFamily="Georgia, serif" fontWeight="bold" fontSize="18" fill="currentColor">Safra</text>
-            </svg>
-          </div>
-
-          {/* CAIXA */}
-          <div 
-            className="flex flex-col items-center justify-center h-20 w-full max-w-[180px] bg-white border border-neutral-border rounded-premium-sm p-4 shadow-sm hover:border-[#005CA5]/40 group transition-all duration-300"
-            role="img"
-            aria-label="Logotipo da Caixa Econômica Federal, instituição parceira da Poupe Consig"
-          >
-            <svg 
-              viewBox="0 0 120 40" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-7 w-auto text-[#7e8590] group-hover:text-[#005CA5] transition-colors duration-300"
-            >
-              {/* Caixa lettermark with orange dot */}
-              <text x="5" y="27" fontFamily="sans-serif" fontWeight="900" fontSize="22" fontStyle="italic" fill="currentColor">CAIXA</text>
-              <rect x="80" y="8" width="16" height="16" fill="currentColor" opacity="0.2" />
-              <rect x="83" y="11" width="10" height="10" fill="#FF850A" className="group-hover:fill-[#FF850A] transition-colors duration-300" />
-            </svg>
-          </div>
-
-          {/* Facta */}
-          <div 
-            className="flex flex-col items-center justify-center h-20 w-full max-w-[180px] bg-white border border-neutral-border rounded-premium-sm p-4 shadow-sm hover:border-[#B20E10]/40 group transition-all duration-300"
-            role="img"
-            aria-label="Logotipo da Facta Financeira, instituição parceira da Poupe Consig"
-          >
-            <svg 
-              viewBox="0 0 120 40" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-auto text-[#7e8590] group-hover:text-[#B20E10] transition-colors duration-300"
-            >
-              {/* Facta stylized cursive wordmark */}
-              <path d="M12 12C12 12 18 8 22 15C26 22 20 28 12 28C6 28 4 22 4 20" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-              <text x="32" y="27" fontFamily="sans-serif" fontWeight="800" fontSize="22" fill="currentColor">Facta</text>
-            </svg>
-          </div>
-
+              <div className="transition-all duration-300 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100">
+                {bank.svg}
+              </div>
+            </div>
+          ))}
         </div>
       </Container>
     </section>

@@ -1,20 +1,18 @@
 import React from 'react';
-import { MessageSquare, ArrowUp } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { openWhatsApp } from '../../lib/whatsapp';
 
 export const FinalCTA: React.FC = () => {
-  const handleScrollToMatch = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <section className="py-20 bg-primary-950 text-white relative overflow-hidden">
-      {/* Subtle abstract curve element */}
       <div className="absolute inset-0 opacity-10 pointer-events-none -z-10">
         <svg width="100%" height="100%" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <path d="M-100 300 C300 200, 700 450, 1100 250 C1300 150, 1500 200, 1600 250" stroke="white" strokeWidth="6" strokeLinecap="round" />
@@ -36,25 +34,17 @@ export const FinalCTA: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-2">
-          {/* Orange Accent CTA */}
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => openWhatsApp('GENERAL')}
-            className="text-base font-bold"
-          >
-            <MessageSquare className="w-5 h-5 mr-2" />
+          <Button variant="accent" size="lg" onClick={() => openWhatsApp('GENERAL')} className="text-base font-bold">
+            <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-lg" />
             Falar com Camila no WhatsApp
           </Button>
-
-          {/* Secondary CTA */}
           <Button
             variant="secondary"
             size="lg"
-            onClick={handleScrollToMatch}
+            onClick={handleScrollToTop}
             className="text-base font-bold bg-transparent border-white/30 text-white hover:bg-white/10 hover:border-white"
           >
-            <ArrowUp className="w-5 h-5 mr-2" />
+            <FontAwesomeIcon icon={faArrowUp} className="mr-2" />
             Encontrar uma opção para mim
           </Button>
         </div>
