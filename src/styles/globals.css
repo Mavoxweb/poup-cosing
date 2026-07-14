@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-950: #031B44;
+    --primary-900: #052B6C;
+    --primary-800: #033F90;
+    --primary-700: #0479B5;
+
+    --accent-700: #D95F00;
+    --accent-600: #F77606;
+    --accent-500: #FF850A;
+    --accent-100: #FFF1E5;
+
+    --whatsapp: #25D366;
+
+    --background: #FFFFFF;
+    --surface: #F7F9FC;
+    --surface-blue: #F2F7FC;
+
+    --text: #172033;
+    --text-secondary: #5E6878;
+    --border: #E2E7EE;
+  }
+
+  body {
+    @apply text-neutral-text bg-white font-sans antialiased;
+    color: var(--text);
+    background-color: var(--background);
+  }
+}
+
+/* Custom Scrollbar for Premium Look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Accessibility Utilities */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-primary-950 focus:px-4 focus:py-2 focus:rounded-premium-sm focus:shadow-premium focus:outline-none focus:ring-2 focus:ring-primary-800;
+}
+
+/* Global focus styling for keyboard users */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary-700 ring-offset-2;
+}
+
+/* Safe Area Paddings for iOS/Android Devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
