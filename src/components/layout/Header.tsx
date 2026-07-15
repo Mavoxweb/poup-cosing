@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import logoPoupConsig from '../../assets/logo-poup-consig.png';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { openWhatsApp } from '../../lib/whatsapp';
@@ -40,40 +41,19 @@ export const Header: React.FC = () => {
       }`}
     >
       <Container className="flex items-center justify-between">
-        {/* SVG Logo Poupe Consig */}
+        {/* Logo Oficial Poupe Consig */}
         <a
           href="#"
-          className="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2 rounded"
+          className="group focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2 rounded"
           aria-label="Poupe Consig Promotora - Home"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
         >
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="text-primary-900 group-hover:scale-105 transition-transform duration-300"
-          >
-            <path
-              d="M25 50C25 38.9543 33.9543 30 45 30C52.0163 30 58.188 33.6053 61.8541 39.0909C63.146 36.3636 65.5768 30 75 30C86.0457 30 95 38.9543 95 50C95 61.0457 86.0457 70 75 70C67.9837 70 61.812 66.3947 58.1459 60.9091C56.854 63.6364 54.4232 70 45 70C33.9543 70 25 61.0457 25 50Z"
-              stroke="currentColor"
-              strokeWidth="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M75 50C75 44.4772 70.5228 40 65 40C59.4772 40 55 44.4772 55 50C55 55.5228 59.4772 60 65 60C70.5228 60 75 55.5228 75 50Z"
-              fill="#FF850A"
-            />
-          </svg>
-          <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-tight text-primary-950 leading-none">
-              Poupe<span className="text-accent-600">Consig</span>
-            </span>
-            <span className="text-[9px] font-semibold tracking-wider text-neutral-secondary uppercase leading-none mt-1">
-              Promotora
-            </span>
-          </div>
+          <img
+            src={logoPoupConsig}
+            alt="Poupe Consig Promotora — Transparência no Crédito Consignado"
+            className="h-10 w-auto group-hover:opacity-85 transition-opacity duration-300"
+            draggable={false}
+          />
         </a>
 
         {/* Desktop Navigation */}

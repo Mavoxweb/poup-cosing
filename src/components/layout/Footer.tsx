@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../ui/Container';
 import { BUSINESS } from '../../constants/business';
+import logoPoupConsig from '../../assets/logo-poup-consig.png';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -26,35 +27,13 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <svg 
-                width="36" 
-                height="36" 
-                viewBox="0 0 100 100" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white"
-              >
-                <path 
-                  d="M25 50C25 38.9543 33.9543 30 45 30C52.0163 30 58.188 33.6053 61.8541 39.0909C63.146 36.3636 65.5768 30 75 30C86.0457 30 95 38.9543 95 50C95 61.0457 86.0457 70 75 70C67.9837 70 61.812 66.3947 58.1459 60.9091C56.854 63.6364 54.4232 70 45 70C33.9543 70 25 61.0457 25 50Z" 
-                  stroke="currentColor" 
-                  strokeWidth="10" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                />
-                <path 
-                  d="M75 50C75 44.4772 70.5228 40 65 40C59.4772 40 55 44.4772 55 50C55 55.5228 59.4772 60 65 60C70.5228 60 75 55.5228 75 50Z" 
-                  fill="#FF850A" 
-                />
-              </svg>
-              <div className="flex flex-col">
-                <span className="text-lg font-extrabold tracking-tight leading-none">
-                  Poupe<span className="text-accent-500">Consig</span>
-                </span>
-                <span className="text-[8px] font-semibold tracking-wider text-primary-700 uppercase leading-none mt-1">
-                  Promotora
-                </span>
-              </div>
+            <div>
+              <img
+                src={logoPoupConsig}
+                alt="Poupe Consig Promotora"
+                className="h-9 w-auto brightness-0 invert opacity-90"
+                draggable={false}
+              />
             </div>
             
             <p className="text-sm text-primary-100 max-w-sm font-medium">
