@@ -1,11 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { BUSINESS } from '../../constants/business';
 import { openWhatsApp } from '../../lib/whatsapp';
+import camilaPhoto from '../../assets/camila-teste-01.png';
 
 export const Consultant: React.FC = () => {
   return (
@@ -20,30 +21,41 @@ export const Consultant: React.FC = () => {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          {/* Placeholder Image Column */}
+          {/* Photo Column */}
           <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center">
-            <div className="relative w-full max-w-[380px] aspect-[4/5] bg-surface-blue border border-neutral-border rounded-premium-lg shadow-premium overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
-              <div className="absolute inset-4 border border-dashed border-primary-700/30 rounded-premium-sm"></div>
+            <div className="relative w-full max-w-[400px] group">
 
-              <div className="w-24 h-24 rounded-full bg-primary-100/80 border border-primary-100 flex items-center justify-center text-primary-800 mb-6 relative group-hover:scale-105 transition-transform duration-300">
-                <FontAwesomeIcon icon={faUserCheck} className="w-10 h-10" />
-                <div className="absolute -bottom-1 -right-1 p-1 bg-[#25D366] rounded-full text-white border-2 border-white">
-                  <FontAwesomeIcon icon={faWhatsapp} className="w-4 h-4" />
+              {/* Decorative ring behind photo */}
+              <div className="absolute -inset-3 rounded-premium-lg bg-gradient-to-br from-primary-700/20 via-transparent to-accent-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+              <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-primary-100 rounded-premium-lg -z-10" />
+
+              {/* Photo */}
+              <div className="relative w-full aspect-[3/4] rounded-premium-lg overflow-hidden shadow-premium-hover border border-neutral-border/40">
+                <img
+                  src={camilaPhoto}
+                  alt="Camila Rodrigues — Consultora da Poupe Consig Promotora em São Gonçalo, RJ"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  draggable={false}
+                />
+                {/* Subtle gradient at the bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary-950/30 to-transparent pointer-events-none" />
+
+                {/* WhatsApp badge */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-premium-sm px-4 py-3 shadow-premium border border-neutral-border/50">
+                  <div className="p-1.5 bg-[#25D366] rounded-full shrink-0">
+                    <FontAwesomeIcon icon={faWhatsapp} className="text-white w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-extrabold text-primary-950 leading-none truncate">Camila Rodrigues</p>
+                    <p className="text-[11px] text-neutral-secondary font-medium mt-0.5">Consultora · Poupe Consig</p>
+                  </div>
+                  <div className="ml-auto flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                    <span className="text-[10px] font-bold text-[#25D366]">Online</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-2 relative z-10">
-                <span className="text-xs font-bold text-accent-700 tracking-widest uppercase">
-                  Foto Oficial Faltante
-                </span>
-                <p className="text-sm font-bold text-primary-950 px-4">
-                  [Espaço reservado para a foto real da Camila Rodrigues]
-                </p>
-                <p className="text-xs text-neutral-secondary px-6">
-                  Insira o caminho da imagem real em src/components/sections/Consultant.tsx quando disponível.
-                </p>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-primary-900/5 to-transparent"></div>
             </div>
           </div>
 
