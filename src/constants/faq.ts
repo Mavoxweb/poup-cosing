@@ -28,7 +28,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-simulacao",
     question: "Posso fazer uma simulação sem compromisso?",
-    answer: "Sim. Todas as simulações e atendimentos realizados pela Poupe Consig são totalmente informativos e sem compromisso. Nosso objetivo é ajudar você a compreender as opções viáveis para que você tome sua decisão com total tranquilidade e clareza."
+    answer: "Sim. Todas as simulações e atendimentos realizados pela Poupconsig são totalmente informativos e sem compromisso. Nosso objetivo é ajudar você a compreender as opções viáveis para que você tome sua decisão com total tranquilidade e clareza."
   },
   {
     id: "faq-aprovacao",
@@ -42,7 +42,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     id: "faq-instituicoes",
-    question: "Quais instituições a Poupe Consig atende?",
+    question: "Quais instituições a Poupconsig atende?",
     answer: "Nós atuamos em parceria com diversas instituições financeiras reconhecidas no mercado, incluindo Banco Inter, Banco Daycoval, Safra, Caixa Econômica Federal e Facta Financeira. A oferta e as taxas variam de acordo com o seu perfil e o convênio aplicável."
   }
 ];

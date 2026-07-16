@@ -12,7 +12,7 @@ export const Institutions: React.FC = () => {
   const banks: BankLogo[] = [
     {
       name: 'Banco Inter',
-      label: 'Logotipo do Banco Inter, instituição parceira da Poupe Consig',
+      label: 'Logotipo do Banco Inter, instituição parceira da Poupconsig',
       hoverColor: 'hover:border-[#FF7A00]/40',
       svg: (
         /* Banco Inter — wordmark laranja */
@@ -37,7 +37,7 @@ export const Institutions: React.FC = () => {
     },
     {
       name: 'Banco Daycoval',
-      label: 'Logotipo do Banco Daycoval, instituição parceira da Poupe Consig',
+      label: 'Logotipo do Banco Daycoval, instituição parceira da Poupconsig',
       hoverColor: 'hover:border-[#003B71]/40',
       svg: (
         /* Banco Daycoval — símbolo + wordmark */
@@ -66,7 +66,7 @@ export const Institutions: React.FC = () => {
     },
     {
       name: 'Banco Safra',
-      label: 'Logotipo do Banco Safra, instituição parceira da Poupe Consig',
+      label: 'Logotipo do Banco Safra, instituição parceira da Poupconsig',
       hoverColor: 'hover:border-[#1E3050]/40',
       svg: (
         /* Banco Safra — logotipo clássico azul-marinho */
@@ -92,7 +92,7 @@ export const Institutions: React.FC = () => {
     },
     {
       name: 'Caixa Econômica Federal',
-      label: 'Logotipo da Caixa Econômica Federal, instituição parceira da Poupe Consig',
+      label: 'Logotipo da Caixa Econômica Federal, instituição parceira da Poupconsig',
       hoverColor: 'hover:border-[#005CA5]/40',
       svg: (
         /* CAIXA — bloco azul com laranja */
@@ -116,7 +116,7 @@ export const Institutions: React.FC = () => {
     },
     {
       name: 'Facta Financeira',
-      label: 'Logotipo da Facta Financeira, instituição parceira da Poupe Consig',
+      label: 'Logotipo da Facta Financeira, instituição parceira da Poupconsig',
       hoverColor: 'hover:border-[#B20E10]/40',
       svg: (
         /* Facta — símbolo triangular + wordmark */

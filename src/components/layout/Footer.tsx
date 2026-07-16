@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
         {/* Regulatory Disclosure */}
         <div className="pt-8 text-xs text-primary-100/60 leading-relaxed space-y-4">
           <p>
-            <strong>Nota de transparência:</strong> A Poupe Consig Promotora, sob responsabilidade de {BUSINESS.consultant}, atua como correspondente bancário. Não somos uma instituição financeira e não realizamos operações de crédito diretamente. Como correspondentes bancários, seguimos estritamente as diretrizes da Resolução nº 4.935 do Banco Central do Brasil.
+            <strong>Nota de transparência:</strong> A Poupconsig Promotora, sob responsabilidade de {BUSINESS.consultant}, atua como correspondente bancário. Não somos uma instituição financeira e não realizamos operações de crédito diretamente. Como correspondentes bancários, seguimos estritamente as diretrizes da Resolução nº 4.935 do Banco Central do Brasil.
           </p>
           <p>
             Trabalhamos em parceria com instituições financeiras autorizadas, incluindo: Banco Inter, Banco Daycoval, Banco Safra, Caixa Econômica Federal e Facta Financeira. A contratação de crédito depende de fatores como a análise de margem consignável, convênios ativos, perfil cadastral e critérios específicos da instituição parceira escolhida para a operação.

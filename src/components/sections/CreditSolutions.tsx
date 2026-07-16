@@ -87,7 +87,7 @@ export const CreditSolutions: React.FC<CreditSolutionsProps> = ({
         <SectionHeading
           eyebrow="SOLUÇÕES DE CRÉDITO"
           title="Uma necessidade diferente pode pedir uma solução diferente."
-          description="Conheça as modalidades atendidas pela Poupe Consig e fale com uma consultora para verificar as possibilidades aplicáveis ao seu perfil."
+          description="Conheça as modalidades atendidas pela Poupconsig e fale com uma consultora para verificar as possibilidades aplicáveis ao seu perfil."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
           {SOLUTIONS.map((solution) => (

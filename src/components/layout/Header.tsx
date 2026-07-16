@@ -45,12 +45,12 @@ export const Header: React.FC = () => {
         <a
           href="#"
           className="group focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2 rounded"
-          aria-label="Poupe Consig Promotora - Home"
+          aria-label="Poupconsig Promotora - Home"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
         >
           <img
             src={logoPoupConsig}
-            alt="Poupe Consig Promotora — Transparência no Crédito Consignado"
+            alt="Poupconsig Promotora — Transparência no Crédito Consignado"
             className="h-10 w-auto group-hover:opacity-85 transition-opacity duration-300"
             draggable={false}
           />

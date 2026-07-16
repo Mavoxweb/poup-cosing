@@ -38,7 +38,7 @@ export const Benefits: React.FC = () => {
     <section className="py-20 bg-white">
       <Container>
         <SectionHeading
-          eyebrow="POR QUE POUPE CONSIG"
+          eyebrow="POR QUE POUPCONSIG"
           title="Crédito envolve decisão. Informação clara faz diferença."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">

@@ -23,7 +23,7 @@ export const FinalCTA: React.FC = () => {
       <Container className="text-center max-w-4xl space-y-8 relative z-10 animate-[fadeIn_0.5s_ease-out]">
         <div className="space-y-4">
           <span className="text-xs md:text-sm font-extrabold tracking-widest text-accent-500 uppercase">
-            FALE COM A POUPE CONSIG
+            FALE COM A POUPCONSIG
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight max-w-2xl mx-auto">
             Não sabe qual opção escolher? Comece pela conversa.
@@ -50,7 +50,7 @@ export const FinalCTA: React.FC = () => {
         </div>
 
         <p className="text-xs text-primary-100/50 pt-4 font-semibold tracking-wider uppercase">
-          Atendimento personalizado pela Poupe Consig
+          Atendimento personalizado pela Poupconsig
         </p>
       </Container>
     </section>

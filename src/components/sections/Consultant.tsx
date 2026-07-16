@@ -47,7 +47,7 @@ export const Consultant: React.FC = () => {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs font-extrabold text-primary-950 leading-none truncate">Camila Rodrigues</p>
-                    <p className="text-[11px] text-neutral-secondary font-medium mt-0.5">Consultora · Poupe Consig</p>
+                    <p className="text-[11px] text-neutral-secondary font-medium mt-0.5">Consultora · Poupconsig</p>
                   </div>
                   <div className="ml-auto flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
@@ -72,14 +72,14 @@ export const Consultant: React.FC = () => {
 
             <div className="space-y-4 text-base md:text-lg text-neutral-secondary leading-relaxed">
               <p className="border-l-4 border-primary-700 pl-4 italic font-medium text-primary-950">
-                "Na Poupe Consig, meu atendimento começa entendendo o seu perfil e o que você procura. A partir daí, verificamos as possibilidades disponíveis e esclarecemos as condições para você analisar com mais segurança."
+                "Na Poupconsig, meu atendimento começa entendendo o seu perfil e o que você procura. A partir daí, verificamos as possibilidades disponíveis e esclarecemos as condições para você analisar com mais segurança."
               </p>
               <p>Sem transformar crédito em um monte de palavras difíceis. Você pergunta, eu explico.</p>
             </div>
 
             <div className="pt-2">
               <p className="text-lg font-extrabold text-primary-950 leading-none">{BUSINESS.consultant}</p>
-              <p className="text-sm text-neutral-secondary font-semibold mt-1">Consultora | Poupe Consig</p>
+              <p className="text-sm text-neutral-secondary font-semibold mt-1">Consultora | Poupconsig</p>
             </div>
 
             <div className="pt-4 border-t border-neutral-border/60 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
