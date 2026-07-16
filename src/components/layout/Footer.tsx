@@ -8,6 +8,24 @@ export const Footer: React.FC = () => {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    
+    if (window.location.hash.startsWith('#/')) {
+      window.location.hash = `#${id}`;
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       const headerOffset = 80;
@@ -22,18 +40,32 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-primary-950 text-white border-t border-primary-900 pt-16 pb-28 md:pb-12">
-      <Container>
+      <Container className="animate-[fadeIn_0.5s_ease-out]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-12 border-b border-primary-900">
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div>
-              <img
-                src={logoPoupConsig}
-                alt="Poupe Consig Promotora"
-                className="h-9 w-auto brightness-0 invert opacity-90"
-                draggable={false}
-              />
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.location.hash.startsWith('#/')) {
+                    window.location.hash = '';
+                  } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+                className="inline-block group focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-100 rounded"
+                aria-label="Poupconsig Promotora - Home"
+              >
+                <img
+                  src={logoPoupConsig}
+                  alt="Poupconsig Promotora"
+                  className="h-9 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
+                  draggable={false}
+                />
+              </a>
             </div>
             
             <p className="text-sm text-primary-100 max-w-sm font-medium">
@@ -98,13 +130,17 @@ export const Footer: React.FC = () => {
             <p className="text-xs text-primary-100/70 leading-relaxed">
               Atuamos em estrita conformidade com a LGPD (Lei Geral de Proteção de Dados) para garantir a segurança e a privacidade das suas informações.
             </p>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-primary-100/80 font-semibold">
-              <a href="/politica-de-privacidade" className="hover:text-white hover:underline">
+            <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs text-primary-100/80 font-semibold">
+              <a href="#/politica-de-privacidade" className="hover:text-white hover:underline transition-colors">
                 Política de Privacidade
               </a>
               <span className="text-primary-900">•</span>
-              <a href="/politica-de-cookies" className="hover:text-white hover:underline">
-                Política de Cookies
+              <a href="#/politica-de-cookies" className="hover:text-white hover:underline transition-colors">
+                Cookies
+              </a>
+              <span className="text-primary-900">•</span>
+              <a href="#/termos-e-condicoes" className="hover:text-white hover:underline transition-colors">
+                Termos de Uso
               </a>
             </div>
           </div>

@@ -23,6 +23,21 @@ export const Header: React.FC = () => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
+    
+    if (window.location.hash.startsWith('#/')) {
+      window.location.hash = `#${id}`;
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 50);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       const headerOffset = 80;
@@ -41,12 +56,19 @@ export const Header: React.FC = () => {
       }`}
     >
       <Container className="flex items-center justify-between">
-        {/* Logo Oficial Poupe Consig */}
+        {/* Logo Oficial Poupconsig */}
         <a
           href="#"
           className="group focus-visible:ring-2 focus-visible:ring-primary-700 focus-visible:ring-offset-2 rounded"
           aria-label="Poupconsig Promotora - Home"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onClick={(e) => {
+            e.preventDefault();
+            if (window.location.hash.startsWith('#/')) {
+              window.location.hash = '';
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
         >
           <img
             src={logoPoupConsig}
