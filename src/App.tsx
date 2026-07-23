@@ -9,6 +9,7 @@ import Consultant from './components/sections/Consultant';
 import Institutions from './components/sections/Institutions';
 import Benefits from './components/sections/Benefits';
 import FAQ from './components/sections/FAQ';
+import Testimonials from './components/sections/Testimonials';
 import FinalCTA from './components/sections/FinalCTA';
 import { GlobalWhatsAppSticky } from './components/ui/WhatsAppButton';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
@@ -69,6 +70,9 @@ export const App: React.FC = () => {
 
             {/* Four Core Brand Pillars */}
             <Benefits />
+
+            {/* Real Customer Testimonials */}
+            <Testimonials />
 
             {/* Accessible Accordions for FAQ */}
             <FAQ />

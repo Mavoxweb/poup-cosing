@@ -4,7 +4,8 @@ export type CreditContext =
   | "CLT"
   | "FGTS"
   | "CONTA_LUZ"
-  | "SERVIDOR";
+  | "SERVIDOR"
+  | "BOLSA_FAMILIA";
 
 export interface Solution {
   id: string;
@@ -69,6 +70,16 @@ export const SOLUTIONS: Solution[] = [
     tags: ["Servidor público", "Consignado"],
     ctaText: "Verificar meu vínculo",
     whatsAppContext: "SERVIDOR"
+  },
+  {
+    id: "sol-bolsa-familia",
+    type: "BOLSA_FAMILIA",
+    title: "Empréstimo Bolsa Família",
+    headline: "Possibilidades de crédito para beneficiários.",
+    description: "Consulte as condições e opções disponíveis de empréstimo voltado para beneficiários do programa Bolsa Família.",
+    tags: ["Bolsa Família", "Consulte condições"],
+    ctaText: "Verificar Bolsa Família",
+    whatsAppContext: "BOLSA_FAMILIA"
   }
 ];
 
@@ -103,6 +114,12 @@ export const PROFILE_OPTIONS: ProfileOption[] = [
     label: "Tenho saldo no FGTS",
     solutionName: "Antecipação do Saque-Aniversário FGTS",
     description: "Esta modalidade permite que trabalhadores com saldo no FGTS antecipem parcelas do seu Saque-Aniversário anual, sem parcelas mensais descontadas da conta bancária, pois a liquidação ocorre diretamente na conta do FGTS."
+  },
+  {
+    type: "BOLSA_FAMILIA",
+    label: "Sou beneficiário do Bolsa Família",
+    solutionName: "Empréstimo Bolsa Família",
+    description: "Para beneficiários do programa Bolsa Família, avaliamos opções de microcrédito e outras linhas disponíveis conforme a legislação vigente e regras das instituições financeiras parceiras."
   },
   {
     type: "CONTA_LUZ",

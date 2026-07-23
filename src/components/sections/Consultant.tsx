@@ -4,7 +4,6 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
-import { BUSINESS } from '../../constants/business';
 import { openWhatsApp } from '../../lib/whatsapp';
 import camilaPhoto from '../../assets/camila-teste-01.png';
 
@@ -66,20 +65,42 @@ export const Consultant: React.FC = () => {
                 SEU ATENDIMENTO TEM NOME
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary-950 leading-tight">
-                Oi, eu sou a Camila. Vamos entender o que faz sentido para você?
+                Olá, sou Camila Rodrigues.
               </h2>
             </div>
 
             <div className="space-y-4 text-base md:text-lg text-neutral-secondary leading-relaxed">
-              <p className="border-l-4 border-primary-700 pl-4 italic font-medium text-primary-950">
-                "Na Poupconsig, meu atendimento começa entendendo o seu perfil e o que você procura. A partir daí, verificamos as possibilidades disponíveis e esclarecemos as condições para você analisar com mais segurança."
+              <p>
+                Atuo há mais de <strong>15 anos</strong> no mercado de empréstimo consignado, oferecendo um atendimento pautado pela transparência, ética e compromisso com cada cliente. Ao longo da minha trajetória, ajudei centenas de pessoas a encontrar a solução de crédito mais adequada às suas necessidades, sempre com atenção, respeito e orientação personalizada.
               </p>
-              <p>Sem transformar crédito em um monte de palavras difíceis. Você pergunta, eu explico.</p>
-            </div>
 
-            <div className="pt-2">
-              <p className="text-lg font-extrabold text-primary-950 leading-none">{BUSINESS.consultant}</p>
-              <p className="text-sm text-neutral-secondary font-semibold mt-1">Consultora | Poupconsig</p>
+              {/* Febraban Certification Card */}
+              <div className="p-5 bg-surface-blue border border-primary-100 rounded-premium-sm flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-2.5 bg-white border border-primary-200 rounded-premium-sm text-primary-700 shrink-0">
+                  <svg className="w-6 h-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div className="space-y-1">
+                  <h4 className="text-xs font-extrabold text-primary-950 uppercase tracking-wider">
+                    Certificação Oficial FEBRABAN
+                  </h4>
+                  <p className="text-sm font-bold text-primary-900">
+                    FBB110 · Correspondente Consignado + LGPD
+                  </p>
+                  <p className="text-xs text-neutral-secondary leading-relaxed mt-1">
+                    Garante conhecimentos técnicos em crédito consignado, matemática financeira, ética profissional e nas diretrizes da Lei Geral de Proteção de Dados (LGPD), assegurando um atendimento seguro e em conformidade com a Resolução CMN nº 4.935.
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                Tenho como compromisso oferecer um atendimento humanizado, esclarecendo todas as dúvidas e acompanhando cada etapa do processo para que você tenha tranquilidade na hora de contratar seu crédito.
+              </p>
+
+              <p className="font-semibold text-primary-950">
+                Será um prazer atender você e ajudar a encontrar a melhor solução para a sua necessidade.
+              </p>
             </div>
 
             <div className="pt-4 border-t border-neutral-border/60 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">

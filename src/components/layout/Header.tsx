@@ -84,6 +84,7 @@ export const Header: React.FC = () => {
             { href: 'solucoes', label: 'Soluções' },
             { href: 'como-funciona', label: 'Como funciona' },
             { href: 'atendimento', label: 'Atendimento' },
+            { href: 'depoimentos', label: 'Depoimentos' },
             { href: 'duvidas', label: 'Dúvidas' },
           ].map(({ href, label }) => (
             <a
@@ -139,6 +140,7 @@ export const Header: React.FC = () => {
               { href: 'solucoes', label: 'Soluções de Crédito' },
               { href: 'como-funciona', label: 'Como funciona' },
               { href: 'atendimento', label: 'Atendimento Humano' },
+              { href: 'depoimentos', label: 'Depoimentos de Clientes' },
               { href: 'duvidas', label: 'Dúvidas Frequentes' },
             ].map(({ href, label }) => (
               <a
