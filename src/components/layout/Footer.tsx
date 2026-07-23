@@ -163,7 +163,15 @@ export const Footer: React.FC = () => {
               &copy; {currentYear} {BUSINESS.name}. Todos os direitos reservados.
             </span>
             <span>
-              Desenvolvido com foco em clareza e acessibilidade.
+              Orgulhosamente criado por{' '}
+              <a
+                href="https://mintral.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white font-semibold underline decoration-accent-500/40 hover:decoration-accent-500 transition-all duration-200"
+              >
+                mintral
+              </a>.
             </span>
           </div>
         </div>
