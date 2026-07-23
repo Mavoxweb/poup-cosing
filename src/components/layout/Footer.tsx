@@ -162,7 +162,7 @@ export const Footer: React.FC = () => {
             <span>
               &copy; {currentYear} {BUSINESS.name}. Todos os direitos reservados.
             </span>
-            <span>
+            <span className="md:mr-52">
               Orgulhosamente criado por{' '}
               <a
                 href="https://mintral.com.br"
