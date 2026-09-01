@@ -5,7 +5,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { openWhatsApp } from '../../lib/whatsapp';
-import camilaPhoto from '../../assets/camila-teste-01.png';
+import camilaPhoto from '../../assets/camila-enviada.jpeg';
 
 export const Consultant: React.FC = () => {
   return (
