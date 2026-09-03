@@ -38,8 +38,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCityModal }) => {
             Crédito mais simples de entender. Atendimento mais humano para decidir.
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-neutral-secondary leading-relaxed max-w-xl">
-            Conheça possibilidades de crédito para o seu perfil e conte com o atendimento personalizado de Camila Rodrigues.
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-secondary leading-relaxed max-w-xl">
+            Especialista em <strong className="font-extrabold text-accent-700 text-xl sm:text-2xl md:text-3xl inline-block">avaliação neuropsicológica infantil</strong> e atendimento personalizado de Camila Rodrigues.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
