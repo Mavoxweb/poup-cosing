@@ -5,7 +5,8 @@ export type CreditContext =
   | "FGTS"
   | "CONTA_LUZ"
   | "SERVIDOR"
-  | "BOLSA_FAMILIA";
+  | "BOLSA_FAMILIA"
+  | "REFINANCIAMENTO_VEICULO";
 
 export interface Solution {
   id: string;
@@ -80,6 +81,17 @@ export const SOLUTIONS: Solution[] = [
     tags: ["Bolsa Família", "Consulte condições"],
     ctaText: "Verificar Bolsa Família",
     whatsAppContext: "BOLSA_FAMILIA"
+  },
+  {
+    id: "sol-refin-veiculo",
+    type: "REFINANCIAMENTO_VEICULO",
+    title: "Refinanciamento de Veículo",
+    badge: "Garantia de Veículo",
+    headline: "Use seu veículo como garantia e obtenha condições diferenciadas.",
+    description: "Transforme o valor do seu carro em crédito sem precisar vendê-lo, mantendo o uso no seu dia a dia.",
+    tags: ["Garantia de veículo", "Taxas reduzidas"],
+    ctaText: "Simular refinanciamento",
+    whatsAppContext: "REFINANCIAMENTO_VEICULO"
   }
 ];
 
@@ -128,9 +140,16 @@ export const PROFILE_OPTIONS: ProfileOption[] = [
     description: "Uma opção alternativa de crédito onde a cobrança das parcelas é integrada à sua fatura de energia elétrica residencial, dependendo da concessionária e da viabilidade regional."
   },
   {
+    type: "REFINANCIAMENTO_VEICULO",
+    label: "Tenho um veículo e quero refinanciar",
+    solutionName: "Refinanciamento de Veículo",
+    description: "O refinanciamento de veículo (empréstimo com garantia de veículo) permite utilizar seu automóvel para obter crédito com taxas de juros menores e prazos maiores, mantendo a posse do veículo."
+  },
+  {
     type: "NAO_SEI",
     label: "Ainda não sei qual opção escolher",
     solutionName: "Atendimento personalizado com Camila Rodrigues",
     description: "Se você tem dúvidas de qual modalidade de crédito se adapta melhor à sua situação financeira, Camila Rodrigues está à disposição para avaliar suas necessidades e apresentar caminhos claros."
   }
 ];
+

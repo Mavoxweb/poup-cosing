@@ -26,6 +26,11 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: "Nesta modalidade, as parcelas do crédito são cobradas diretamente na sua conta mensal de energia elétrica. Ela representa uma alternativa simplificada de crédito, dependendo da aprovação na concessionária de energia parceira do seu município e da viabilidade da operação para o seu perfil de consumo."
   },
   {
+    id: "faq-refin-veiculo",
+    question: "Como funciona o refinanciamento de veículo?",
+    answer: "O refinanciamento de veículo (ou empréstimo com garantia de veículo) permite obter recursos financeiros utilizando seu automóvel como garantia. Você continua utilizando seu veículo normalmente no dia a dia enquanto quita as parcelas com taxas de juros reduzidas."
+  },
+  {
     id: "faq-simulacao",
     question: "Posso fazer uma simulação sem compromisso?",
     answer: "Sim. Todas as simulações e atendimentos realizados pela Poupconsig são totalmente informativos e sem compromisso. Nosso objetivo é ajudar você a compreender as opções viáveis para que você tome sua decisão com total tranquilidade e clareza."

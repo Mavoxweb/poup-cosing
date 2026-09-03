@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck, faBuilding, faBriefcase, faCoins, faBolt, faCircleQuestion, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck, faBuilding, faBriefcase, faCoins, faBolt, faCircleQuestion, faUsers, faCar } from '@fortawesome/free-solid-svg-icons';
 import { PROFILE_OPTIONS } from '../../constants/solutions';
 import type { ProfileOption } from '../../constants/solutions';
 
@@ -12,6 +12,7 @@ const getIcon = (type: string) => {
     case 'FGTS': return faCoins;
     case 'CONTA_LUZ': return faBolt;
     case 'BOLSA_FAMILIA': return faUsers;
+    case 'REFINANCIAMENTO_VEICULO': return faCar;
     default: return faCircleQuestion;
   }
 };
