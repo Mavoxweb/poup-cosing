@@ -3,8 +3,8 @@ import Container from '../ui/Container';
 
 // Import official bank logos
 import logoInter from '../../assets/banco/Logo_do_banco_Inter_(2023).svg';
-import logoItau from '../../assets/banco/Itaú_Unibanco_logo_2023.svg.webp';
-import logoBradesco from '../../assets/banco/Banco_Bradesco_logo_(horizontal).png';
+import logoDaycoval from '../../assets/banco/banco-daycoval.svg';
+import logoBrb from '../../assets/banco/brb.webp';
 import logoC6 from '../../assets/banco/c6-bank-logo-png_seeklogo-463244.png';
 import logoBmg from '../../assets/banco/Logo_do_Banco_Bmg.svg.webp';
 import logoPan from '../../assets/banco/Logotipo_do_Banco_Pan.svg';
@@ -15,6 +15,7 @@ interface BankLogo {
   label: string;
   logo: string;
   hoverColor: string;
+  imageClass?: string;
 }
 
 export const Institutions: React.FC = () => {
@@ -26,22 +27,24 @@ export const Institutions: React.FC = () => {
       hoverColor: 'hover:border-[#FF7A00]/40',
     },
     {
-      name: 'Itaú',
-      label: 'Logotipo do Banco Itaú, instituição parceira da Poupconsig',
-      logo: logoItau,
-      hoverColor: 'hover:border-[#EC7000]/40',
+      name: 'Banco Daycoval',
+      label: 'Logotipo do Banco Daycoval, instituição parceira da Poupconsig',
+      logo: logoDaycoval,
+      hoverColor: 'hover:border-[#002D62]/40',
     },
     {
-      name: 'Banco Bradesco',
-      label: 'Logotipo do Banco Bradesco, instituição parceira da Poupconsig',
-      logo: logoBradesco,
-      hoverColor: 'hover:border-[#CC092F]/40',
+      name: 'BRB Banco de Brasília',
+      label: 'Logotipo do BRB Banco de Brasília, instituição parceira da Poupconsig',
+      logo: logoBrb,
+      hoverColor: 'hover:border-[#00529B]/40',
+      imageClass: 'max-h-12 scale-125',
     },
     {
       name: 'C6 Bank',
       label: 'Logotipo do C6 Bank, instituição parceira da Poupconsig',
       logo: logoC6,
       hoverColor: 'hover:border-black/40',
+      imageClass: 'max-h-11 scale-125',
     },
     {
       name: 'Banco Bmg',
@@ -85,9 +88,9 @@ export const Institutions: React.FC = () => {
               key={bank.name}
               className={`
                 flex items-center justify-center h-20 w-full max-w-[180px]
-                bg-white border border-neutral-border rounded-premium-sm p-4 shadow-sm
+                bg-white border border-neutral-border rounded-premium-sm p-3 shadow-sm
                 ${bank.hoverColor}
-                transition-all duration-300 group cursor-default
+                transition-all duration-300 group cursor-default overflow-hidden
               `}
               role="img"
               aria-label={bank.label}
@@ -95,7 +98,7 @@ export const Institutions: React.FC = () => {
               <img
                 src={bank.logo}
                 alt={bank.name}
-                className="max-h-8 max-w-full object-contain grayscale group-hover:grayscale-0 opacity-65 group-hover:opacity-100 transition-all duration-300"
+                className={`max-w-full object-contain grayscale group-hover:grayscale-0 opacity-75 group-hover:opacity-100 transition-all duration-300 ${bank.imageClass || 'max-h-8'}`}
                 draggable={false}
                 loading="lazy"
               />

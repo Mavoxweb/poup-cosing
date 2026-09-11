@@ -48,6 +48,6 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: "faq-instituicoes",
     question: "Quais instituições a Poupconsig atende?",
-    answer: "Nós atuamos em parceria com diversas instituições financeiras reconhecidas no mercado, incluindo Banco Inter, Banco Daycoval, Safra, Caixa Econômica Federal e Facta Financeira. A oferta e as taxas variam de acordo com o seu perfil e o convênio aplicável."
+    answer: "Nós atuamos em parceria com diversas instituições financeiras reconhecidas no mercado, incluindo Banco Inter, Banco Daycoval, BRB (Banco de Brasília), Safra, Caixa Econômica Federal e Facta Financeira. A oferta e as taxas variam de acordo com o seu perfil e o convênio aplicável."
   }
 ];

@@ -80,7 +80,7 @@ export const PrivacyPolicy: React.FC = () => {
             <ol className="list-decimal pl-5 space-y-2">
               <li>Realizar simulações de taxas e prazos adequadas ao seu perfil de crédito.</li>
               <li>Entrar em contato direto com você via WhatsApp para prestar atendimento humano, esclarecer dúvidas e apresentar propostas.</li>
-              <li>Encaminhar a proposta de crédito para as instituições financeiras parceiras (como Banco Inter, Daycoval, Safra, Caixa ou Facta) sob sua expressa anuência e solicitação.</li>
+              <li>Encaminhar a proposta de crédito para as instituições financeiras parceiras (como Banco Inter, Daycoval, BRB, Safra, Caixa ou Facta) sob sua expressa anuência e solicitação.</li>
               <li>Cumprir obrigações legais e regulatórias do Banco Central do Brasil pertinentes à atuação de correspondentes bancários.</li>
             </ol>
             <p className="bg-primary-50/50 border-l-4 border-primary-800 p-4 rounded-r-premium-sm text-sm text-primary-950 font-medium">

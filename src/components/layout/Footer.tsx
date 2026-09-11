@@ -152,7 +152,7 @@ export const Footer: React.FC = () => {
             <strong>Nota de transparência:</strong> A Poupconsig Promotora, sob responsabilidade de {BUSINESS.consultant}, atua como correspondente bancário. Não somos uma instituição financeira e não realizamos operações de crédito diretamente. Como correspondentes bancários, seguimos estritamente as diretrizes da Resolução nº 4.935 do Banco Central do Brasil.
           </p>
           <p>
-            Trabalhamos em parceria com instituições financeiras autorizadas, incluindo: Banco Inter, Banco Daycoval, Banco Safra, Caixa Econômica Federal e Facta Financeira. A contratação de crédito depende de fatores como a análise de margem consignável, convênios ativos, perfil cadastral e critérios específicos da instituição parceira escolhida para a operação.
+            Trabalhamos em parceria com instituições financeiras autorizadas, incluindo: Banco Inter, Banco Daycoval, BRB (Banco de Brasília), Banco Safra, Caixa Econômica Federal e Facta Financeira. A contratação de crédito depende de fatores como a análise de margem consignável, convênios ativos, perfil cadastral e critérios específicos da instituição parceira escolhida para a operação.
           </p>
           <p>
             A taxa de juros, o Custo Efetivo Total (CET), o prazo de pagamento e o valor das parcelas variam de acordo com a modalidade solicitada e o perfil do cliente. Todas as condições comerciais serão apresentadas de forma transparente no momento da simulação com a nossa consultoria, antes de qualquer tomada de decisão.
